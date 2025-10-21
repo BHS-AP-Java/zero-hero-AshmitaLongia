@@ -1,32 +1,49 @@
 package edu.bhscs;
 
+// Fields
 public class Cake {
-  String flavor;
+  String frosting;
   String flour;
+  String flavor;
   String customerName;
+  int price;
+  int width;
+  int slope;
   int weight;
 
-  public Cake(String flavor, String flour, String customerName) {
-
-    this.weight = 10;
+  // Constructor
+  public Cake(
+      String frosting,
+      int price,
+      String flavor,
+      String customerName,
+      int width,
+      int slope,
+      int weight,
+      String flour) {
+    this.frosting = frosting;
+    this.price = price;
     this.flavor = flavor;
-    this.flour = flour;
     this.customerName = customerName;
-    System.out.println("Baking a " + flavor + " cake for " + customerName + "...");
-    System.out.println("Using ingredients: " + flour.toString() + ", sugar, eggs, butter");
+    this.width = width;
+    this.slope = slope;
+    this.weight = weight;
+    this.flour = flour;
   }
 
-  public void eaten() {
-    if (this.weight > 0) {
-      this.weight = this.weight - 1;
-      System.out.println("Cake is all gone");
-    } else {
-      System.out.println(
-          customerName + " ate some " + flavor + " cake. Remaining weight: " + weight + " lbs.");
+  // Draw method
+  public void draw(String icing, int x, int y) {
+    System.out.println("I am mkaing you a cake");
+
+    // Looping through each row for height
+    for (int count = 0; count < x; count++) {
+      // Looping through each column for width
+      for (int i = 0; i < y; i++) {
+        System.out.print(icing); // Pring the icing
+      }
+      System.out.println(); // Move to the next line after each row
+
+      System.out.println("###################");
     }
-  }
-
-  public int getWeight() {
-    return this.weight;
   }
 }

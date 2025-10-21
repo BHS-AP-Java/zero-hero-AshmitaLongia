@@ -4,21 +4,15 @@ import java.util.Scanner;
 
 public class Player {
 
-  public static void main(String[] args) {
+  Scanner input = new Scanner(System.in);
+  public String name;
 
-    String name;
-
-    Scanner s = new Scanner(System.in); // scanner is a scanner property
+  public String giveAnswer(String question) {
+    System.out.println(question);
+    return input.nextLine();
   }
 
-  public Player(String name) {
-    this.name = name;
-    this.s = new Scanner(System.in);
-  }
-
-  public void answerQuestions() {
-    System.out.println("What's your question?");
-    String question;
-    System.out.println(question + "is a dumb question");
+  public void accomplish(int amount) {
+    System.out.println("Player improved by " + amount + "!");
   }
 }

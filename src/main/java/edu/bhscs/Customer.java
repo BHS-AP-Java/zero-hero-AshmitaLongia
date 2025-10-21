@@ -2,7 +2,7 @@ package edu.bhscs;
 
 public class Customer {
   // Field
-  private String name;
+  public String name;
 
   // Constructor
   public Customer(String name) {
@@ -13,4 +13,10 @@ public class Customer {
   public String getName() {
     return name;
   }
+
+  public int pay(int price) {
+    return price;
+  }
+
+  public void takeCake(Cake bakeCake) {}
 }

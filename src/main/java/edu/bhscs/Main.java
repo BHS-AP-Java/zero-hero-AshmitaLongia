@@ -17,18 +17,34 @@ package edu.bhscs;
 import java.util.Scanner;
 
 public class Main {
+
   public static void main(String[] args) {
+    Player player = new Player();
+    Flour flour = new Flour(20, 1);
+    Store store = new Store("Sweet Treats Bakery");
+    Customer customer = new Customer("Poopy Pants");
+
+    Baker baker = new Baker(player, flour, store, customer);
+    baker.takeJob(store);
+    Store myBakery = new Store("Poopy Pants Bakery");
+
+    System.out.println();
+    System.out.println();
+
+    Cake myCake = new Cake("Chocolate", 20, "Vanilla", "alalal", 5, 3, 2, "Wheat");
+    myCake.draw("~~", 3, 9);
+
+    System.out.println();
+    System.out.println();
 
     Scanner s = new Scanner(System.in);
 
-    System.out.println("What can we do with a scanner");
-    System.out.println("What is your favorite cake flavor");
-    System.out.println("I dont know, but im done now");
-    String color = s.next();
+    System.out.println("What is you favorite cake flavor?");
+    String flavor = s.nextLine();
 
-    System.out.println("Your favorite cake flavor is " + color);
+    System.out.println("Your favorite cake flavor is " + flavor + "!");
+    System.out.println("Making you a " + flavor + " cake!");
 
-    s.next();
     s.close();
   }
 }
