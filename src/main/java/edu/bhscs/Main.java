@@ -31,12 +31,6 @@ public class Main {
     System.out.println();
     System.out.println();
 
-    Cake myCake = new Cake("Chocolate", 20, "Vanilla", "alalal", 5, 3, 2, "Wheat");
-    myCake.draw("~~", 3, 9);
-
-    System.out.println();
-    System.out.println();
-
     Scanner s = new Scanner(System.in);
 
     System.out.println("What is you favorite cake flavor?");
@@ -44,6 +38,12 @@ public class Main {
 
     System.out.println("Your favorite cake flavor is " + flavor + "!");
     System.out.println("Making you a " + flavor + " cake!");
+
+    System.out.println();
+    System.out.println();
+
+    Cake myCake = new Cake(flavor, 20, "idk", "alalal", 5, 3, 2, "Wheat");
+    myCake.draw("~~", 3, 9, null, null);
 
     s.close();
   }
