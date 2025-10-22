@@ -32,8 +32,8 @@ public class Cake {
   }
 
   // Draw method
-  public void draw(String icing, int x, int y) {
-    System.out.println("I am mkaing you a cake");
+  public void draw(String icing, int x, int y, String name, String age) {
+    System.out.println("I am drawing");
 
     // Looping through each row for height
     for (int count = 0; count < x; count++) {
