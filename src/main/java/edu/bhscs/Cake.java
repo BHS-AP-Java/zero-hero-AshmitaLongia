@@ -39,11 +39,27 @@ public class Cake {
     for (int count = 0; count < x; count++) {
       // Looping through each column for width
       for (int i = 0; i < y; i++) {
-        System.out.print(icing); // Pring the icing
+        System.out.print(icing); // Print the icing
       }
       System.out.println(); // Move to the next line after each row
 
       System.out.println("###################");
     }
   }
+  public void draw(int surface) {
+
+  }
+  public void draw(Table t){
+    this.draw();
+    t.draw();
 }
+
+
+}
+
+
+/*
+what to do-
+1. make the cake colored
+2. add sprinkles
+*/

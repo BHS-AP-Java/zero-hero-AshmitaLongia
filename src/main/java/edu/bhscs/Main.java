@@ -19,6 +19,7 @@ import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
+
     Player player = new Player();
     Flour flour = new Flour(20, 1);
     Store store = new Store("Sweet Treats Bakery");
@@ -46,5 +47,8 @@ public class Main {
     myCake.draw("~~", 3, 9, null, null);
 
     s.close();
-  }
+
 }
+  }
+
+
