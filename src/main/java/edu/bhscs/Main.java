@@ -20,6 +20,9 @@ public class Main {
 
   public static void main(String[] args) {
 
+    App date10_27 = new App();
+    date10_27.runApp();
+
     Player player = new Player();
     Flour flour = new Flour(20, 1);
     Store store = new Store("Sweet Treats Bakery");
@@ -27,28 +30,30 @@ public class Main {
 
     Baker baker = new Baker(player, flour, store, customer);
     baker.takeJob(store);
-    Store myBakery = new Store("Poopy Pants Bakery");
-
-    System.out.println();
-    System.out.println();
 
     Scanner s = new Scanner(System.in);
 
-    System.out.println("What is you favorite cake flavor?");
-    String flavor = s.nextLine();
+    System.out.println(
+        "What is your favorite cake flavor? (chocolate, vanilla, strawberry, lemon)");
+    String flavor = s.nextLine().toLowerCase();
 
     System.out.println("Your favorite cake flavor is " + flavor + "!");
     System.out.println("Making you a " + flavor + " cake!");
 
-    System.out.println();
-    System.out.println();
+    Cake myCake =
+        new Cake(
+            flavor + " frosting",
+            20, // price
+            flavor, // flavor
+            "Customer", // customerName
+            5, // width
+            3, // heigth
+            2, // weight
+            "Wheat" // flour
+            );
 
-    Cake myCake = new Cake(flavor, 20, "idk", "alalal", 5, 3, 2, "Wheat");
-    myCake.draw("~~", 3, 9, null, null);
+    myCake.draw("~~", 5, 15, "Customer", "16");
 
     s.close();
-
-}
   }
-
-
+}

@@ -18,6 +18,10 @@ public class Baker {
     this.cash = 0;
   }
 
+  public Baker(String string) {
+    /// wdiwdojiw
+  }
+
   public void takeJob(Store bakery) {
     String doYouWantToWorkHere =
         this.p.giveAnswer("Do you want to work at " + bakery.getName() + "?");
@@ -37,5 +41,9 @@ public class Baker {
   public void learn(int amount) {
     this.skill += amount;
     this.p.accomplish(amount);
+  }
+
+  public Cake bakes(int i, String string) {
+    return new Cake(string, i, string, string, i, i, i, string);
   }
 }
