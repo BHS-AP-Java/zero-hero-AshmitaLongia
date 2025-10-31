@@ -64,19 +64,18 @@ public class Cake {
 
     System.out.println("Making a " + flavor + " cake for " + customerName + "!");
 
-    // Loop through each row (height)
-    for (int r = 0; r < rows; r++) {
-      // Loop through each column (width)
-      for (int c = 0; c < cols; c++) {
-        // 1 in 4 chance to put a sprinkle
+    for (int r = 0; r < rows; r++) { // hiegth
+
+      for (int c = 0; c < cols; c++) { // widht
+
         if (rand.nextInt(4) == 0) {
-          System.out.print(mainColor + "’" + RESET); // sprinkle
+          System.out.print(mainColor + "’" + RESET);
         } else {
-          System.out.print(mainColor + "~" + RESET); // regular icing
+          System.out.print(mainColor + "~" + RESET);
         }
       }
-      System.out.println(); // end of row
-      System.out.println("################"); // table layer
+      System.out.println();
+      System.out.println("################");
     }
   }
 }
