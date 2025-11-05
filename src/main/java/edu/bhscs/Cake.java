@@ -39,7 +39,6 @@ public class Cake {
     this.flour = flour;
   }
 
-  // Draw cake with sprinkles
   public void draw(String icing, int rows, int cols, String name, String age) {
     Random rand = new Random();
 

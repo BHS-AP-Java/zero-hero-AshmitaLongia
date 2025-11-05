@@ -29,11 +29,12 @@ public class Table {
     }
     System.out.println();
 
-    for (int row = 0; row < 1; row++) { // horizontal distance between "leg"
+    for (int row = 0; row < 5; row++) { // horizontal distance between "leg"
       for (int col = 0; col < width; col++) {
 
-        if (col % (width / (legs - 1)) == 0) { // checks if the col is divisible by the interval
+        if (col % (width / (legs)) == 0) { // checks if the col is divisible by the interval
           System.out.print(leg); // if the remainder is 0, the col is a multiple of the interval
+
         } else {
           System.out.print(" ");
         }
