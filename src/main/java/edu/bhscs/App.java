@@ -2,6 +2,8 @@ package edu.bhscs;
 
 public class App {
 
+  private static Object table;
+
   public static void main(String[] args) {
 
     date10_27();

@@ -33,24 +33,14 @@ public class Main {
 
     Scanner s = new Scanner(System.in);
 
-    System.out.println(
-        "What is your favorite cake flavor? (chocolate, vanilla, strawberry, lemon)");
+    System.out
+        .println("What is your favorite cake flavor? (chocolate, vanilla, strawberry, lemon)");
     String flavor = s.nextLine().toLowerCase();
 
     System.out.println("Your favorite cake flavor is " + flavor + "!");
     System.out.println("Making you a " + flavor + " cake!");
 
-    Cake myCake =
-        new Cake(
-            flavor + " frosting",
-            20, // price
-            flavor, // flavor
-            "Customer", // customerName
-            5, // width
-            3, // heigth
-            2, // weight
-            "Wheat" // flour
-            );
+    Cake myCake = new Cake(flavor + " frosting", 20, flavor, "Customer", 5, 3, 2, "Wheat");
 
     myCake.draw("~~", 5, 15, "Customer", "16");
 

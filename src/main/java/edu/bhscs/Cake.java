@@ -20,15 +20,8 @@ public class Cake {
   public static final String BROWN = "\u001B[38;5;94m";
   public static final String PINK = "\u001B[95m";
 
-  public Cake(
-      String frosting,
-      int price,
-      String flavor,
-      String customerName,
-      int width,
-      int slope,
-      int weight,
-      String flour) {
+  public Cake(String frosting, int price, String flavor, String customerName, int width, int slope,
+      int weight, String flour) {
     this.frosting = frosting;
     this.price = price;
     this.flavor = flavor.toLowerCase();
@@ -38,6 +31,31 @@ public class Cake {
     this.weight = weight;
     this.flour = flour;
   }
+
+  // methods//////////////////////////////////
+
+  public void centeringMath(Table table) {
+    int cakeWidth = this.width;
+    int tableWidth = table.getWidth();
+    int offset = (cakeWidth - tableWidth) / 2;
+    int cakeOffset = 0;
+    int tableOffset = 0;
+
+    if (cakeWidth > tableWidth) {
+      tableOffset = Math.abs(offset);
+      cakeOffset = 0;
+    } else {
+      cakeOffset = Math.abs(offset);
+      tableOffset = 0;
+    }
+  }
+
+  /*
+   * public int draw(Table table) { this.draw(centeringMath(tableWidth));
+   * table.draw(centeringMath(cakeWidth));
+   *
+   * }
+   */
 
   public void draw(String icing, int rows, int cols, String name, String age) {
     Random rand = new Random();
@@ -60,8 +78,6 @@ public class Cake {
         mainColor = RESET;
         break;
     }
-
-    System.out.println("Making a " + flavor + " cake for " + customerName + "!");
 
     for (int r = 0; r < rows; r++) { // hiegth
 
