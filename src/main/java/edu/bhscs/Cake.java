@@ -2,7 +2,7 @@ package edu.bhscs;
 
 import java.util.Random;
 
-public class Cake {
+public class Cake implements Offsetable {
 
   String frosting;
   String flour;
@@ -32,33 +32,15 @@ public class Cake {
     this.flour = flour;
   }
 
-  // methods//////////////////////////////////
-
-  public void centeringMath(Table table) {
-    int cakeWidth = this.width;
-    int tableWidth = table.getWidth();
-    int offset = (cakeWidth - tableWidth) / 2;
-    int cakeOffset = 0;
-    int tableOffset = 0;
-
-    if (cakeWidth > tableWidth) {
-      tableOffset = Math.abs(offset);
-      cakeOffset = 0;
-    } else {
-      cakeOffset = Math.abs(offset);
-      tableOffset = 0;
-    }
+  @Override
+  public int getWidth() {
+    return width;
   }
 
-  /*
-   * public int draw(Table table) { this.draw(centeringMath(tableWidth));
-   * table.draw(centeringMath(cakeWidth));
-   *
-   * }
-   */
 
-  public void draw(String icing, int rows, int cols, String name, String age) {
-    Random rand = new Random();
+  @Override
+  public void draw(Offsetable below) {
+    int offset = getOffset(below);
 
     String mainColor;
     switch (flavor) {
@@ -79,10 +61,14 @@ public class Cake {
         break;
     }
 
-    for (int r = 0; r < rows; r++) { // hiegth
+    Random rand = new Random();
+    int rows = 5;
+    int cols = width;
 
-      for (int c = 0; c < cols; c++) { // widht
 
+    for (int r = 0; r < rows; r++) {
+      System.out.print(" ".repeat(offset));
+      for (int c = 0; c < cols; c++) {
         if (rand.nextInt(4) == 0) {
           System.out.print(mainColor + "’" + RESET);
         } else {
@@ -90,7 +76,11 @@ public class Cake {
         }
       }
       System.out.println();
-      System.out.println("################");
+    }
+
+    if (customerName != null && !customerName.isEmpty()) {
+      int textOffset = offset + (width - customerName.length()) / 2;
+      System.out.println(" ".repeat(textOffset) + customerName);
     }
   }
 }

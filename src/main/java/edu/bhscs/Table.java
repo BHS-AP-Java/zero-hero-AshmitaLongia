@@ -1,31 +1,19 @@
 package edu.bhscs;
 
-import javax.swing.table.TableCellEditor;
-
-public class Table {
+public class Table implements Offsetable {
 
   private int legs;
   private int width;
   private String top;
   private String leg;
   private int numLegRows;
-  private int row;
-  public int table;
-  private int tableWidth;
-  private int centeringMath;
-
 
   public Table(int legs, int width) {
     this.legs = legs;
     this.width = width;
     this.top = "-";
     this.leg = "|";
-    this.numLegRows = 55;
-    this.row = 55;
-    this.centeringMath = 0;
-    this.tableWidth = 0;
-    this.table = table;
-
+    this.numLegRows = 5; 
   }
 
   public void setTop(String top) {
@@ -36,32 +24,25 @@ public class Table {
     this.leg = leg;
   }
 
+  @Override
   public int getWidth() {
-    return this.tableWidth = 0;
+    return width;
   }
 
-  public void centerLength() {
-    int cakeWidth = this.width;
-    int offset = (tableWidth - cakeWidth) / 2;
-    int tableOffset = 0;
-    int cakeOffset = 0;
-    if (tableWidth > cakeWidth) {
-      tableOffset = 0;
-      cakeOffset = Math.abs(offset);
+  @Override
+  public void draw(Offsetable below) {
+    int offset = getOffset(below);
 
-    } else {
-      cakeOffset = 0;
-      tableOffset = Math.abs(offset);
-    }
-  }
-
-  public void draw() {
+    // Draw the tabletop
+    System.out.print(" ".repeat(offset));
     for (int i = 0; i < width; i++) {
       System.out.print(top);
     }
     System.out.println();
 
+    // Draw the legs
     for (int row = 0; row < numLegRows; row++) {
+      System.out.print(" ".repeat(offset));
       for (int col = 0; col < width; col++) {
         if (col % (width / (legs - 1)) == 0) {
           System.out.print(leg);
@@ -71,9 +52,5 @@ public class Table {
       }
       System.out.println();
     }
-
   }
-
-
 }
-
