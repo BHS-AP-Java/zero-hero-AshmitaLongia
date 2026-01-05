@@ -20,8 +20,15 @@ public class Cake implements Offsetable {
   public static final String BROWN = "\u001B[38;5;94m";
   public static final String PINK = "\u001B[95m";
 
-  public Cake(String frosting, int price, String flavor, String customerName, int width, int slope,
-      int weight, String flour) {
+  public Cake(
+      String frosting,
+      int price,
+      String flavor,
+      String customerName,
+      int width,
+      int slope,
+      int weight,
+      String flour) {
     this.frosting = frosting;
     this.price = price;
     this.flavor = flavor.toLowerCase();
@@ -36,7 +43,6 @@ public class Cake implements Offsetable {
   public int getWidth() {
     return width;
   }
-
 
   @Override
   public void draw(Offsetable below) {
@@ -64,7 +70,6 @@ public class Cake implements Offsetable {
     Random rand = new Random();
     int rows = 5;
     int cols = width;
-
 
     for (int r = 0; r < rows; r++) {
       System.out.print(" ".repeat(offset));

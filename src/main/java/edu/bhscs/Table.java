@@ -13,7 +13,7 @@ public class Table implements Offsetable {
     this.width = width;
     this.top = "-";
     this.leg = "|";
-    this.numLegRows = 5; 
+    this.numLegRows = 5;
   }
 
   public void setTop(String top) {
